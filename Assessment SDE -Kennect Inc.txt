@@ -1,0 +1,132 @@
+-> for Loop in java 
+	Printing the first 5 number
+		for (int i = 0; i < 5; i++) {
+		  System.out.println(i);
+		}
+
+-> while Loop in java 
+	Printing the first 5 number
+		int i = 0;
+		while (i < 5) {
+		  System.out.println(i);
+		  i++;
+		}
+		
+-> continue in java 
+	Printing even number between 1 to 100 
+		for (int i = 1; i < 101; i++) {
+			if( i%2!=0 ) continue ;
+			System.out.println(i);
+		}
+
+-> if-else 
+	finding maximum number between 3 number 
+		int a , b , c ;
+		// take the input in a , b , c 
+		if( a>b ){
+			if( a>c ){
+				System.out.println("a is greater ");
+			}
+			else{
+				System.out.println("c is greater ");
+			}
+		}
+		else {
+			if( b>c ){
+				System.out.println("b is greater ");
+			}
+			else{
+				System.out.println("c is greater ");
+			}
+		}
+
+-> switch in java 
+	String str="Ram" ;
+	switch(str){
+		case "Ram" :
+			System.out.println("Hi Ram 😎");
+			break ;
+			
+		case "Shyam" :
+			System.out.println("Hi Shyam 😎");
+			break ;
+			
+		default : 
+			System.out.println("Hi Unknown 😎");
+	}
+			
+-> printing number 10 to 1 using recursion
+	// calling the method 
+	print_reverse( 10 );
+	
+	// defination of print_reverse method
+	void print_reverse( int num ){
+		if( num==1 ){
+			System.out.println( num ) ;
+			return ;
+		}
+		print_reverse( num-1 );
+		return ;
+	}
+	
+-> binary search tree
+	// merthod to check whether an element(tgt) is present in bst or not
+	boolean isPresentInBST( Node node , int tgt ){
+		if( node==null ) return false;
+		if( node.data==tgt ) return true ;
+		if( node.data>tgt ) return isPresentInBST( node.left , tgt );
+		return isPresentInBST( node.right , tgt ) ;
+	}
+
+-> closure in JavaScript 
+	const add = (function () {
+	  let counter = 0;
+	  return function () {
+		counter += 1;
+		return counter
+	  }
+	})();
+
+	add();
+	add();
+	add();
+	
+-> getElementById 
+	<html>
+	<body>
+		<h1 id="eg">Eg for getElementById </h1>
+
+		<script>
+			document.getElementById("eg").style.color = "Orange";
+		</script>
+	</body>
+	</html>
+	
+-> given x find x is prime or not and diff b/t x and next prime num 
+	
+	function isPrime( int x ){
+		for( int itr=2 ; itr<=x/2 ; itr++ ){
+			if( x%itr==0 ){
+				console.log( "x is not prime " ) ;
+				return ;
+		}
+		console.log( "x is prime " ) ;
+		int nextPrime=findNextPrimeNum( x+1 ) ;
+		console.log( "Diffrenece b/w x and next prime num is -> "+ nextPrime-x  ) ;
+		return ;		
+	}
+	function findNextPrimeNum( int num ){
+		boolean flg ;
+		for( int outer=num ; true ; outer++ ){
+			flg=true ; // means current outer might be prime 
+			for( int itr=2 ; itr<=outer/2 ; itr++ ){
+				if( outer%itr==0 ){
+					flg=false ; // marking that current outer is not prime
+					break ;
+				}
+			}
+			if( flg ){
+				return outer ; // if flg is true means outer is prime hence returen it
+			}
+		}
+	}
